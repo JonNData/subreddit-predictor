@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container">
-    <h1>Flask-SQLAlchemy Tutorial</h1>
+    <h1>Subreddit Predictor app</h1>
       {% for user in users %}
         <ul id="user.username">
           <li>
@@ -16,14 +16,6 @@
           <li>
               <span class="field-name">Created:</span>
               <span class="field-value">{{ user.created }}</span>
-          </li>
-          <li>
-              <span class="field-name">Bio:</span>
-              <span class="field-value">{{ user.bio }}</span>
-          </li>
-          <li>
-              <span class="field-name">Admin:</span>
-              <span class="field-value">{{ user.admin }}</span>
           </li>
         </ul>
       {% endfor %}
