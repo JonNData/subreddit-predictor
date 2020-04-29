@@ -36,6 +36,6 @@ def make_predict():
     return jsonify(prediction = output[0])
 
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def home():
     return render_template('home.html')
