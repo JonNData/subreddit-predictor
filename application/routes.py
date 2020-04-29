@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import request, jsonify, render_template
 from flask import current_app as app
 import numpy as np 
 import pandas as pd 
@@ -34,3 +34,8 @@ def make_predict():
     # send back the top 5 subreddits and their associated probabilities
 
     return jsonify(prediction = output[0])
+
+
+@app.route("/")
+def home():
+    return render_template('home.html')
