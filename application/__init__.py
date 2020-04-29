@@ -11,8 +11,8 @@ def create_app():
 
     # db.init_app(app)
 
-    # with app.app_context():
-        # from . import routes  # Import routes
+    with app.app_context():
+        from . import routes  # Import routes
         # db.create_all()  # Create database tables for our data models
 
-    return app
+        return app
