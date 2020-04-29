@@ -6,10 +6,10 @@ import json
 import pickle
 
 # pickled vectorizer and classifier
-with open('vectorizer.pkl', 'rb') as file:
+with open('vectorizer2.pkl', 'rb') as file:
     vec_pickle = pickle.load(file)
 
-with open('SGDClassifier.pkl', 'rb') as file1:
+with open('SGDClassifier_pickle.pkl', 'rb') as file1:
     clf_pickle = pickle.load(file1)
 
 # endpoint for sending the post    
@@ -33,7 +33,4 @@ def make_predict():
 
     # send back the top 5 subreddits and their associated probabilities
 
-    return jsonify(output[0])
-    
-
-
+    return jsonify(prediction = output[0])
