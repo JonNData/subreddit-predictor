@@ -4,6 +4,10 @@ import numpy as np
 import pandas as pd 
 import json
 import pickle
+from flask_cors import CORS
+
+# Allow for Cross Origin Resource Sharing
+CORS(app)
 
 # pickled vectorizer and classifier
 with open('vectorizer2.pkl', 'rb') as file:
@@ -25,13 +29,13 @@ def make_predict():
     # combine
     text = title + ' ' + selftext
 
-    # vect should be pickled here
+    # vect should be pickled here, make the text into a list
     text_vect = vec_pickle.transform([text])
     
-    # make prediction USING PICKLED MODEL and convert it to list so that jsonify is happy
+    # make prediction USING PICKLED MODEL 
     output = clf_pickle.predict(text_vect)
 
-    # send back the top 5 subreddits and their associated probabilities
+    # send back the top subreddit
 
     return jsonify(prediction = output[0])
 
